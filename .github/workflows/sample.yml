@@ -1,0 +1,16 @@
+name: SAMPLE
+
+on:
+  workflow_dispatch:
+    inputs:
+      value:
+        required: true
+        description: 渡す値
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - run: echo ${{ github.event.inputs.value }}
