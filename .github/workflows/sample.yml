@@ -14,3 +14,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - run: echo ${{ github.event.inputs.value }}
+      - name: Save to Environment Value
+        run: echo "GIVEN_VALUE=${{ github.event.inputs.value }}" >> $GITHUB_ENV
+      - run: echo "Given value was $GIVEN_VALUE"
